@@ -1,0 +1,356 @@
+.colour-1{
+  background-color: #121212;
+  color: #b3b3b3;
+  border: #121212;
+}
+
+.colour-2{
+  background-color: #1f1f1f;
+  border: #1f1f1f ;
+}
+.colour-3{
+  background-color: #1f1f1f;
+  border: #121212;
+  color: #b3b3b3;
+}
+
+.colour-4{
+  background-color: #FFFFFF1A;
+  border: #FFFFFF1A ;
+}
+
+.full-container{
+  margin-top: 65px;
+}
+.sidebar {
+  width: 28%;
+  position: sticky;
+  top: 65px; 
+  left: 8px;/* Stick the sidebar below the navbar */
+  height: calc(100vh - 70px);
+  overflow-y: auto; /* Prevent sidebar content overflow */
+}
+
+.left-content{
+  width: 70%;
+  padding-left: 38px;
+}
+
+.content-area {
+  top: 65px;
+  height: calc(100vh - 70px); /* Set height for content area */
+  overflow-y: auto; /* Enable scrolling only in the content area */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative; /* Make it flow with the content on small screens */
+    height: auto;
+  }
+}
+
+
+.text-colour{
+  color: #b3b3b3;
+}
+.text-green{
+  color: #1ed760;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  border-radius: 5px;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list-group-item {
+  position: relative;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+.list-group-item:hover {
+  background: #333;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+.list-group-item:hover .play-overlay {
+  opacity: 1;
+}
+.play-button {
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+.text-colour {
+  color: #bbb;
+  margin: 0;
+}
+
+
+.top-bar{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: sticky;
+  top: 65px;
+  z-index: 100;
+}
+
+
+
+.scrolling-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.custom-card {
+  display: inline-block;
+  white-space: normal;
+}
+
+.custom-card img {
+  border-radius: 8px;
+}
+
+
+.custom-card:hover {
+  background: #FFFFFF1A;
+}
+.text-muted {
+  color: #6c757d !important;
+  font-size: 0.9rem;
+}
+
+.toggle-button {
+  border: none;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background-color: #FFFFFF1A;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-button.active {
+  background-color: white;
+  color: black;
+}
+
+.toggle-button:hover {
+  opacity: 0.8;
+}
+
+
+/* Style the audio element */
+.audio-button {
+  width: 50%; /* Make it span the full width of the viewport */
+  height: 50px; /* Adjust height for a button-like look */
+  border: none; /* Remove default border */
+  outline: none; /* Remove focus outline */
+  border-radius: 0; /* Optional: Remove rounded edges for a cleaner look */
+  color: white; /* Icon color */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+  margin-left: 25%; /* Optional: Add shadow for a raised effect */
+}
+
+/* Add hover effect */
+.audio-button:hover {
+  cursor: pointer;
+}
+
+/* Ensure it is fixed to the bottom of the viewport */
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Make sure it stays above other elements */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container for the images */
+.artist-card {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  /* border-radius: 50%; To keep the image round */
+}
+
+/* Style for images */
+.artist-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Play button styles (hidden initially) */
+.artist-card .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #1db954; /* Spotify Green */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover effect to show the play button */
+.artist-card:hover .play-button {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Hover effect to zoom the image */
+.artist-card:hover img {
+  transform: scale(1.05);
+}
+
+
+/* Modal Overlay */
+.popup-modal {
+  display: none; /* Hidden initially */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  z-index: 1000; /* Overlay is above all content */
+}
+
+/* Modal Content */
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff; /* White background for modal */
+  z-index: 1001; /* Content above the overlay */
+  color: #000; /* Black text color */
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Modal Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+.login-link{
+  text-decoration: none;
+}
+
+.input-form{
+  width: 500px;
+}
+
+.search-bar {
+  width: 450px;
+  background-color: #1f1f1f;
+  color: white;
+  border: none;
+  padding: 13px 15px;
+  border-radius: 50px;
+}
+.search-bar::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.profile{
+  width: 35px;
+  height: 35px;
+  background-color: rgb(80, 155, 245);;
+  border-radius: 50%;
+  text-align: center;
+  align-content: center;
+  color: #000;
+  margin: 10px;
+}
+
+.nav-left{
+  gap: 100px;
+}
+
+.navbar{
+  height: 65px;
+}
+
+
